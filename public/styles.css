@@ -126,6 +126,7 @@ section {
   color: #fff;
   text-transform: uppercase;
   font-size: 4rem;
+  margin-top: 60px;
 }
 
 .heading span {
@@ -285,7 +286,7 @@ section {
   transform: scale(1.03);
 }
 
-.price .box-container .box .title {
+.price .box-container .box .titl {
   background: var(--theme-color);
   color: #fff;
   padding: 1.5rem 0;
@@ -405,6 +406,53 @@ section {
 
 .footer {
   background: #111;
+  /* control ize */
+  --u: 5px;
+  --c1: #303030;
+  --c2: #000000;
+  --c3: #1e1e1e;
+  --gp: 50% / calc(var(--u) * 16.9) calc(var(--u) * 12.8);
+  background: conic-gradient(
+        from 122deg at 50% 85.15%,
+        var(--c2) 0 58deg,
+        var(--c3) 0 116deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    conic-gradient(from 122deg at 50% 72.5%, var(--c1) 0 116deg, #fff0 0 100%)
+      var(--gp),
+    conic-gradient(from 58deg at 82.85% 50%, var(--c3) 0 64deg, #fff0 0 100%)
+      var(--gp),
+    conic-gradient(
+        from 58deg at 66.87% 50%,
+        var(--c1) 0 64deg,
+        var(--c2) 0 130deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    conic-gradient(from 238deg at 17.15% 50%, var(--c2) 0 64deg, #fff0 0 100%)
+      var(--gp),
+    conic-gradient(
+        from 172deg at 33.13% 50%,
+        var(--c3) 0 66deg,
+        var(--c1) 0 130deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    linear-gradient(98deg, var(--c3) 0 15%, #fff0 calc(15% + 1px) 100%)
+      var(--gp),
+    linear-gradient(-98deg, var(--c2) 0 15%, #fff0 calc(15% + 1px) 100%)
+      var(--gp),
+    conic-gradient(
+        from -58deg at 50.25% 14.85%,
+        var(--c3) 0 58deg,
+        var(--c2) 0 116deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    conic-gradient(from -58deg at 50% 28.125%, var(--c1) 0 116deg, #fff0 0 100%)
+      var(--gp),
+    linear-gradient(90deg, var(--c2) 0 50%, var(--c3) 0 100%) var(--gp);
 }
 
 .footer .box-container {
@@ -416,30 +464,30 @@ section {
 .footer .box-container .box h3 {
   font-size: 2.5rem;
   padding: 1rem 0;
-  color: #fff;
+  color:   #fff;
 }
 
 .footer .box-container .box a {
   display: block;
   font-size: 1.5rem;
   padding: 1rem 0;
-  color: #eee;
+  color:   #fff;
 }
 
 .footer .box-container .box a i {
   padding-right: 0.5rem;
-  color: var(--theme-color);
+  color:  #fff;
 }
 
 .footer .box-container .box a:hover i {
   padding-right: 1.5rem;
-  color: #fff;
+  color:    var(--theme-color);
 }
 
 .footer .credit {
   text-align: center;
-  border-top: 0.1rem solid #222;
-  color: #fff;
+  border-top: 0.1rem solid  #fff;
+  color:   #fff;
   padding: 2rem;
   padding-top: 2.5rem;
   margin-top: 1rem;
@@ -447,7 +495,7 @@ section {
 }
 
 .footer .credit span {
-  color: var(--theme-color);
+  color:  #fff;
 }
 
 html::-webkit-scrollbar {
@@ -585,4 +633,324 @@ html::-webkit-scrollbar-thumb {
   .contact form .inputBox input {
     width: 100%;
   }
+}
+
+
+
+#form {
+  display: grid;
+  place-items: center;
+  width: 300px;
+  height: 472px;
+  padding: 25px;
+  background-color: #161616;
+  box-shadow: 0px 15px 60px var(--theme-color);
+  outline: 1px solid white;
+  border-radius: 10px;
+  margin-left: 38%;
+}
+
+#form-body {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  left: 25px;
+  width: 230px;
+  margin: -156px auto 0 auto;
+}
+
+#welcome-lines {
+  text-align: center;
+  line-height: 1;
+}
+
+#welcome-line-1 {
+  color: var(--theme-color);;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+#welcome-line-2 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 17px;
+}
+
+#input-area {
+  margin-top: 40px;
+}
+
+.form-inp {
+  padding: 11px 25px;
+  background: transparent;
+  border: 1px solid #e3e3e3;
+  line-height: 1;
+  border-radius: 8px;
+}
+
+.form-inp:focus {
+  border: 1px solid var(--theme-color);;
+}
+
+.form-inp:first-child {
+  margin-bottom: 15px;
+}
+
+.form-inp input {
+  width: 100%;
+  background: none;
+  font-size: 13.4px;
+  color: var(--theme-color);;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-inp input:focus {
+  outline: none;
+}
+
+#submit-button-cvr {
+  margin-top: 20px;
+}
+
+#submit-button {
+  display: block;
+  width: 100%;
+  color: var(--theme-color);;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+  padding: 14px 13px 12px 13px;
+  border: 0;
+  outline: 1px solid var(--theme-color);;
+  border-radius: 8px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all ease-in-out .3s;
+}
+
+#submit-button:hover {
+  transition: all ease-in-out .3s;
+  background-color: var(--theme-color);;
+  color: #161616;
+  cursor: pointer;
+}
+
+#forgot-pass {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#forgot-pass a {
+  color: #868686;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+#bar {
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  width: 28px;
+  height: 8px;
+  margin-left: -33px;
+  background-color: var(--theme-color);;
+  border-radius: 10px;
+}
+
+#bar:before,
+#bar:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ececec;
+  border-radius: 50%;
+}
+
+#bar:before {
+  right: -20px;
+}
+
+#bar:after {
+  right: -38px;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.message, .signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color: royalblue;
+}
+
+.signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+#formContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  background-color: transparent;
+}
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  color: green;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+}
+
+.submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+.hidden {
+  display: none;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+.form {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

@@ -67,31 +67,10 @@ var swiper = new Swiper(".review-slider", {
     disableOnInteraction: false,
   },
 });
+function showForm() {
+  document.getElementById('formContainer').classList.remove('hidden');
+}
 
-
-// public/app.js
-document.getElementById('userForm').addEventListener('submit', async (event) => {
-  event.preventDefault();
-
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const number = document.getElementById('number').value;
-  const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value;
-
-  const response = await fetch('/api/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ name, email, number, subject, message }),
-  });
-
-  if (response.ok) {
-    const result = await response.json();
-    alert('Message sent!')
-    // (`User created: ${result.name} (${result.email})`);
-  } else {
-    alert('Error sending message!');
-  }
-});
+function hideForm() {
+  document.getElementById('formContainer').classList.add('hidden');
+}
