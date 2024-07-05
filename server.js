@@ -49,14 +49,32 @@ app
 
   .get('/adminpanel', async (req, res) => {
     try {
-      const result = await pool.query('SELECT * FROM contact_us');
-      const users = result.rows;
-      const name = result.rows.map(row => row.name);
-      const email = result.rows.map(row => row.email);
-      const subject = result.rows.map(row => row.subject);
-      console.log(name);
-      console.log(email);
-      console.log(subject);
+
+      //booking enquiry
+      const contact = await pool.query('SELECT * FROM contact_us');
+      const price = await pool.query('SELECT * FROM booking');
+      const usersp = price.rows;
+      const first_name = price.rows.map(row => row.first_name);
+      const last_name = price.rows.map(row => row.last_name);
+      const number = price.rows.map(row => row.number);
+      const emailp = price.rows.map(row => row.email);
+      const plan = price.rows.map(row => row.plan);
+      const description = price.rows.map(row => row.description);
+      console.log(usersp);
+      console.log(first_name);
+      console.log(last_name);
+      console.log(number);
+      console.log(emailp);
+      console.log(plan);
+      console.log(description);
+
+
+      //enquiry variables
+      const users = contact.rows;
+      const name = contact.rows.map(row => row.name);
+      const email = contact.rows.map(row => row.email);
+      const subject = contact.rows.map(row => row.subject);
+
 
       const htmlPath = path.join(__dirname, 'public', 'adminPanel.html');
       let html = await fs.readFile(htmlPath, 'utf8');
@@ -66,6 +84,25 @@ app
         userDataHtml += `<p>{{name${index + 1}}}</p>`;
         userDataHtml += `<p>{{email${index + 1}}}</p>`;
         userDataHtml += `<p>{{subject${index + 1}}}</p>`;
+      });
+
+      let userpDataHtml = '';
+      usersp.forEach((user, index) => {
+        userpDataHtml += `<p>{{first_name${index + 1}}}</p>`;
+        userpDataHtml += `<p>{{last_name${index + 1}}}</p>`;
+        userpDataHtml += `<p>{{number${index + 1}}}</p>`;
+        userpDataHtml += `<p>{{emailp${index + 1}}}</p>`;
+        userpDataHtml += `<p>{{plan${index + 1}}}</p>`;
+        userpDataHtml += `<p>{{description ${index + 1}}}</p>`;
+      });
+
+      usersp.forEach((usersp, index) => {
+        html = html.replace(`{{first_name${index + 1}}}`, usersp.first_name);
+        html = html.replace(`{{last_name${index + 1}}}`, usersp.last_name);
+        html = html.replace(`{{emailp${index + 1}}}`, usersp.email);
+        html = html.replace(`{{number${index + 1}}}`, usersp.number);
+        html = html.replace(`{{plan${index + 1}}}`, usersp.plan);
+        html = html.replace(`{{description${index + 1}}}`, usersp.description);
       });
 
       users.forEach((user, index) => {
