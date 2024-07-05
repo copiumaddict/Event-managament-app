@@ -17,15 +17,6 @@ const pool = new Pool({
   port: 5432, // Default port for PostgreSQL
 });
 
-// async function fetchDataOrderedById() {
-//   try {
-//     const result = await pool.query('SELECT * FROM users');
-//     return result.rows.map(row => row.name);
-//   } catch (err) {
-//     console.error('Error executing query', err.stack);
-//     return [];
-//   }
-// }
 
 app
   .use(express.static('public'))
@@ -42,7 +33,6 @@ app
             </script>
           `);
   })
-
 
   .post('/bookingForm', (req, res) => {
     const { first_name, last_name, email, number, address, description, price } = req.body;
@@ -84,42 +74,16 @@ app
         html = html.replace(`{{subject${index + 1}}}`, user.subject);
       });
 
-      // Replace placeholder in HTML with fetched data
-      // html = html.replace(/{{name}}/g, name.map(text => `<p>${text}</p>`).join(''));
-      // html = html.replace(/{{email}}/g, email.map(text => `<p>${text}</p>`).join(''));
-
-      // Send the modified HTML as response
       res.send(html);
     }
 
-    // res.sendFile(path.join(__dirname, '/public', 'adminPanel.html'));
-    // res.send(textData);
-    //   let html = '/adminpanel.html';
-    //   textData.forEach(text => {
-    //     html += `<li>${text}</li>`;
-    //   });
-    //   html += `
-    //     </ul>
-    //   </body>
-    //   </html>
-    // `;
-    //   res.send(html);
+
     catch (err) {
       console.error('Error fetching or rendering data:', err);
       res.status(500).send('Error fetching or rendering data');
     }
   })
-  // const users = pool.query('SELECT * FROM contact_us;', (err, result) => {
-  //   if (err) {
-  //     console.error(err);
-  //     res.status(500).send('Error');
-  //   }
-  //   else {
-  //     res.send(result.rows);
-  //   }
-  // })
+
 
 
   .listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
-
-// export default TextData;
